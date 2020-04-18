@@ -135,7 +135,7 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(7)</small></div></li>
+    <li><div class="all active">全部文章<small>(8)</small></div></li>
     
         
             
@@ -147,7 +147,7 @@
     
         
             
-            <li><div data-rel="Centos7">Centos7<small>(2)</small></div>
+            <li><div data-rel="Centos7">Centos7<small>(4)</small></div>
                 
             </li>
             
@@ -163,8 +163,8 @@
     </div>
     <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="7">
-<input type="hidden" id="yelog_site_word_count" value="5.2k">
+<input type="hidden" id="yelog_site_posts_number" value="8">
+<input type="hidden" id="yelog_site_word_count" value="5.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -206,6 +206,18 @@
     </li>
     
     <li class="article-tag-list-item">
+        <a class="color1">nginx</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">centos</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">花生壳</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a class="color3">网络</a>
     </li>
     
@@ -236,19 +248,27 @@
         </a>
         
         <a  class="Centos7 "
+           href="/2020/04/12/centos-nginx/"
+           data-tag="nginx,centos"
+           data-author="" >
+            <span class="post-title" title="Centos7 Nginx安装">Centos7 Nginx安装</span>
+            <span class="post-date" title="2020-04-12 16:40:03">2020/04/12</span>
+        </a>
+        
+        <a  class="Centos7 "
+           href="/2020/04/19/centos-phddns/"
+           data-tag="花生壳"
+           data-author="" >
+            <span class="post-title" title="Centos7安装花生壳">Centos7安装花生壳</span>
+            <span class="post-date" title="2020-04-19 00:41:16">2020/04/19</span>
+        </a>
+        
+        <a  class="Centos7 "
            href="/2020/04/06/centos_network/"
            data-tag="网络"
            data-author="" >
             <span class="post-title" title="系统设置">系统设置</span>
             <span class="post-date" title="2020-04-06 22:57:56">2020/04/06</span>
-        </a>
-        
-        <a  class=""
-           href="/2020/04/12/docker-nginx/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="docker_nginx">docker_nginx</span>
-            <span class="post-date" title="2020-04-12 16:40:03">2020/04/12</span>
         </a>
         
         <a  class="hexo "
@@ -311,12 +331,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-04-12 16:39:39'>2020-04-11 16:07</time>
+        创建时间:<time class="date" title='更新时间: 2020-04-18 22:57:23'>2020-04-11 16:07</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:0</span>
+        <span>字数:463</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -346,7 +366,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker安装"><span class="toc-text">Docker安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#更新yum资源-运行命令后-一直跟随操作就行"><span class="toc-text">更新yum资源,运行命令后,一直跟随操作就行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装一些必要的工具"><span class="toc-text">安装一些必要的工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加软件源信息"><span class="toc-text">添加软件源信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更新-yum-缓存"><span class="toc-text">更新 yum 缓存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装-Docker-ce"><span class="toc-text">安装 Docker-ce</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启动-Docker-后台服务"><span class="toc-text">启动 Docker 后台服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置开机自动启动"><span class="toc-text">设置开机自动启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重启docker"><span class="toc-text">重启docker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置镜像加速"><span class="toc-text">设置镜像加速</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker常用命令"><span class="toc-text">Docker常用命令</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -362,7 +382,60 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="Docker安装"><a href="#Docker安装" class="headerlink" title="Docker安装"></a>Docker安装</h1><h2 id="更新yum资源-运行命令后-一直跟随操作就行"><a href="#更新yum资源-运行命令后-一直跟随操作就行" class="headerlink" title="更新yum资源,运行命令后,一直跟随操作就行"></a>更新yum资源,运行命令后,一直跟随操作就行</h2><blockquote>
+<p>sudo yum update</p>
+</blockquote>
+<h2 id="安装一些必要的工具"><a href="#安装一些必要的工具" class="headerlink" title="安装一些必要的工具"></a>安装一些必要的工具</h2><blockquote>
+<p>yum install -y yum-utils device-mapper-persistent-data lvm2</p>
+</blockquote>
+<h2 id="添加软件源信息"><a href="#添加软件源信息" class="headerlink" title="添加软件源信息"></a>添加软件源信息</h2><blockquote>
+<p>yum-config-manager –add-repo <a href="http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo" target="_blank" rel="noopener">http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</a>  </p>
+</blockquote>
+<h2 id="更新-yum-缓存"><a href="#更新-yum-缓存" class="headerlink" title="更新 yum 缓存"></a>更新 yum 缓存</h2><blockquote>
+<p>yum makecache fast</p>
+</blockquote>
+<h2 id="安装-Docker-ce"><a href="#安装-Docker-ce" class="headerlink" title="安装 Docker-ce"></a>安装 Docker-ce</h2><blockquote>
+<p>yum -y install docker-ce</p>
+</blockquote>
+<h2 id="启动-Docker-后台服务"><a href="#启动-Docker-后台服务" class="headerlink" title="启动 Docker 后台服务"></a>启动 Docker 后台服务</h2><blockquote>
+<p>systemctl start docker</p>
+</blockquote>
+<h2 id="设置开机自动启动"><a href="#设置开机自动启动" class="headerlink" title="设置开机自动启动"></a>设置开机自动启动</h2><blockquote>
+<p>systemctl enable docker</p>
+</blockquote>
+<h2 id="重启docker"><a href="#重启docker" class="headerlink" title="重启docker"></a>重启docker</h2><blockquote>
+<p>sudo systemctl restart docker</p>
+</blockquote>
+<h2 id="设置镜像加速"><a href="#设置镜像加速" class="headerlink" title="设置镜像加速"></a>设置镜像加速</h2><p>这里我使用的是阿里云镜像加速,网站是:<a href="https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors" target="_blank" rel="noopener">https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors</a><br>在阿里云申请并开通镜像加速器,便可以获得镜像加速器的链接,然后根据下面步骤,添加镜像加速</p>
+<blockquote>
+<p>sudo mkdir -p /etc/docker</p>
+</blockquote>
+<blockquote>
+<p>sudo tee /etc/docker/daemon.json &lt;&lt;-‘EOF’<br>  {<br>    “registry-mirrors”: [“https://你的阿里云加速器链接.mirror.aliyuncs.com”]<br>  }<br>  EOF</p>
+</blockquote>
+<p>重新加载配置文件并且重启docker</p>
+<blockquote>
+<p>sudo systemctl daemon-reload</p>
+</blockquote>
+<blockquote>
+<p>sudo systemctl restart docker</p>
+</blockquote>
+<h1 id="Docker常用命令"><a href="#Docker常用命令" class="headerlink" title="Docker常用命令"></a>Docker常用命令</h1><p>docker login    登录Docker镜像仓库，如果未指定镜像仓库地址，默认为官方仓库 Docker Hub,执行后下一步会提示输入账号密码</p>
+<p>docker logout 登出账户</p>
+<p>docker pull    拉取</p>
+<p>docker push       上传<br>将本地的镜像上传到镜像仓库,要先登陆到镜像仓库<br>docker push codehi/nginx:v1 将本地镜像codehi/nginx:v1镜像推送到docker hub仓库中</p>
+<p>docker search node 查询镜像</p>
+<p>docker ps  查看正在运行的镜像</p>
+<p>docker ps –a 查看已经挂载的镜像</p>
+<p>docker kill  结束镜像</p>
+<p>docker rm  删除挂载的镜像</p>
+<p>docker rmi  删除已经安装的镜像</p>
+<p>docker exec -it c0462d5e1878 bash 进入运行的容器</p>
+<p>docker cp /www/runoob 12d7f14v45cv:/www/ 用于容器与主机之间的数据拷贝</p>
+<p>docker logs -f -t 104e28f2f072 获取容器的日志</p>
+<p>docker logs 获取容器日志</p>
+<p>docker history docker_demo  查看指定镜像的创建历史</p>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 toyk1ng@qq.com </span>
     </div>
@@ -376,10 +449,10 @@
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>docker安装</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">0</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">463</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="codetroupes">codetroupes</a></p>
     <p><span class="copy-title">发布时间:</span>2020-04-11, 16:07:10</p>
-    <p><span class="copy-title">最后更新:</span>2020-04-12, 16:39:39</p>
+    <p><span class="copy-title">最后更新:</span>2020-04-18, 22:57:23</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/04/11/centos-docker-install/" title="docker安装">https://codetroupes.github.io/2020/04/11/centos-docker-install/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
@@ -463,7 +536,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#hexo','#docker','#网络',],
+            'data': ['#hexo','#docker','#nginx','#centos','#花生壳','#网络',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
